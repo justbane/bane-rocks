@@ -1,0 +1,24 @@
+---
+description: Code quality standards including comments, documentation, and best practices
+alwaysApply: true
+---
+
+# Code Quality Standards
+
+## Comments
+- Add concise, meaningful comments for all methods and functions
+- Comments should explain **why**, not **what** (code should be self-explanatory)
+- Keep comments short and to the point
+- Update comments when code changes
+
+## Documentation
+- Refrain from using emoji in documentation
+- Put individual services into their own .md file linked from the README.md
+
+## Best Practices
+- Always follow framework-specific best practices
+- Write DRY (Don't Repeat Yourself) code
+- Use meaningful variable and function names
+- Implement proper error handling and validation
+- Follow SOLID principles where applicable
+- Write testable code

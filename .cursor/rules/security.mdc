@@ -1,0 +1,12 @@
+---
+description: Security best practices for application development
+alwaysApply: true
+---
+
+# Security
+
+- Never hardcode credentials or secrets
+- Use environment variables for configuration
+- Implement CSRF protection
+- Validate and sanitize all inputs
+- Use proper authentication and authorization

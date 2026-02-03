@@ -1,0 +1,10 @@
+---
+description: Git and version control best practices
+alwaysApply: true
+---
+
+# Version Control
+
+- Write clear, descriptive commit messages
+- Keep commits focused and atomic
+- Follow conventional commit format when possible

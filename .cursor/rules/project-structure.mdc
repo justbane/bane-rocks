@@ -1,0 +1,33 @@
+---
+description: Standard project structure patterns for Django backend and Vue frontend
+alwaysApply: true
+---
+
+# Project Structure
+
+## Django Backend
+```
+project/
+├── apps/
+│   ├── app_name/
+│   │   ├── models.py
+│   │   ├── views.py
+│   │   ├── serializers.py
+│   │   ├── urls.py
+│   │   └── tests.py
+├── config/
+│   ├── settings.py
+│   └── urls.py
+└── manage.py
+```
+
+## Vue Frontend
+```
+src/
+├── components/
+├── views/
+├── router/
+├── stores/
+├── api/
+└── App.vue
+```

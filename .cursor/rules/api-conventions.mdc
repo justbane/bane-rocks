@@ -1,0 +1,18 @@
+---
+description: RESTful API conventions and response format standards
+alwaysApply: true
+---
+
+# API Development
+
+## RESTful Conventions
+- Use plural nouns for endpoints (`/api/users/`, not `/api/user/`)
+- Implement proper HTTP status codes
+- Use pagination for list endpoints
+- Include proper request/response validation
+- Document API endpoints clearly
+
+## Response Format
+- Return consistent JSON structures
+- Include error messages and codes
+- Use camelCase for JSON properties (front-end) and snake_case for Python

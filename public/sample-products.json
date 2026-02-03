@@ -1,0 +1,222 @@
+[
+  {
+    "objectID": "1",
+    "name": "Wireless Bluetooth Headphones",
+    "description": "Premium noise-cancelling wireless headphones with 30-hour battery life and crystal-clear audio quality.",
+    "price": 149.99,
+    "category": "Electronics",
+    "brand": "AudioTech",
+    "image_url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+    "rating": 4.5,
+    "in_stock": true
+  },
+  {
+    "objectID": "2",
+    "name": "Smart Watch Series 5",
+    "description": "Advanced fitness tracking, heart rate monitoring, and smartphone notifications on your wrist.",
+    "price": 299.99,
+    "category": "Electronics",
+    "brand": "TechWear",
+    "image_url": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+    "rating": 4.7,
+    "in_stock": true
+  },
+  {
+    "objectID": "3",
+    "name": "Leather Messenger Bag",
+    "description": "Handcrafted genuine leather messenger bag with multiple compartments and adjustable strap.",
+    "price": 189.99,
+    "category": "Accessories",
+    "brand": "LeatherCo",
+    "image_url": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500",
+    "rating": 4.3,
+    "in_stock": true
+  },
+  {
+    "objectID": "4",
+    "name": "Running Shoes - Trail Edition",
+    "description": "Lightweight trail running shoes with superior grip and cushioning for all terrains.",
+    "price": 129.99,
+    "category": "Footwear",
+    "brand": "SportFit",
+    "image_url": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+    "rating": 4.6,
+    "in_stock": true
+  },
+  {
+    "objectID": "5",
+    "name": "Stainless Steel Water Bottle",
+    "description": "Insulated water bottle keeps drinks cold for 24 hours or hot for 12 hours. BPA-free.",
+    "price": 34.99,
+    "category": "Accessories",
+    "brand": "HydroLife",
+    "image_url": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500",
+    "rating": 4.8,
+    "in_stock": true
+  },
+  {
+    "objectID": "6",
+    "name": "Yoga Mat Premium",
+    "description": "Extra thick yoga mat with non-slip surface and carrying strap. Perfect for all yoga styles.",
+    "price": 49.99,
+    "category": "Fitness",
+    "brand": "ZenFit",
+    "image_url": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=500",
+    "rating": 4.4,
+    "in_stock": true
+  },
+  {
+    "objectID": "7",
+    "name": "Portable Bluetooth Speaker",
+    "description": "Waterproof portable speaker with 360-degree sound and 20-hour battery life.",
+    "price": 79.99,
+    "category": "Electronics",
+    "brand": "AudioTech",
+    "image_url": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500",
+    "rating": 4.5,
+    "in_stock": true
+  },
+  {
+    "objectID": "8",
+    "name": "Coffee Maker Deluxe",
+    "description": "Programmable coffee maker with thermal carafe and brew strength control.",
+    "price": 99.99,
+    "category": "Home & Kitchen",
+    "brand": "BrewMaster",
+    "image_url": "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=500",
+    "rating": 4.2,
+    "in_stock": true
+  },
+  {
+    "objectID": "9",
+    "name": "Desk Lamp LED",
+    "description": "Adjustable LED desk lamp with touch controls and USB charging port.",
+    "price": 44.99,
+    "category": "Home & Kitchen",
+    "brand": "LightWave",
+    "image_url": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500",
+    "rating": 4.6,
+    "in_stock": true
+  },
+  {
+    "objectID": "10",
+    "name": "Backpack Laptop 17 inch",
+    "description": "Durable laptop backpack with padded compartment, USB charging port, and water-resistant material.",
+    "price": 69.99,
+    "category": "Accessories",
+    "brand": "TravelPro",
+    "image_url": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",
+    "rating": 4.7,
+    "in_stock": true
+  },
+  {
+    "objectID": "11",
+    "name": "Sunglasses Polarized",
+    "description": "UV400 protection polarized sunglasses with lightweight frame and scratch-resistant lenses.",
+    "price": 89.99,
+    "category": "Accessories",
+    "brand": "SunShield",
+    "image_url": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500",
+    "rating": 4.3,
+    "in_stock": true
+  },
+  {
+    "objectID": "12",
+    "name": "Wireless Mouse Ergonomic",
+    "description": "Ergonomic wireless mouse with adjustable DPI and rechargeable battery.",
+    "price": 39.99,
+    "category": "Electronics",
+    "brand": "TechGear",
+    "image_url": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=500",
+    "rating": 4.5,
+    "in_stock": true
+  },
+  {
+    "objectID": "13",
+    "name": "Camping Tent 4-Person",
+    "description": "Weatherproof camping tent with easy setup, ventilation windows, and rainfly.",
+    "price": 179.99,
+    "category": "Outdoor",
+    "brand": "Adventure Gear",
+    "image_url": "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=500",
+    "rating": 4.4,
+    "in_stock": true
+  },
+  {
+    "objectID": "14",
+    "name": "Kitchen Knife Set",
+    "description": "Professional 8-piece knife set with wooden block and sharpening steel.",
+    "price": 129.99,
+    "category": "Home & Kitchen",
+    "brand": "ChefPro",
+    "image_url": "https://images.unsplash.com/photo-1593618998160-e34014e67546?w=500",
+    "rating": 4.8,
+    "in_stock": true
+  },
+  {
+    "objectID": "15",
+    "name": "Fitness Tracker Band",
+    "description": "Activity tracker with heart rate monitor, sleep tracking, and smartphone notifications.",
+    "price": 59.99,
+    "category": "Fitness",
+    "brand": "FitTrack",
+    "image_url": "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=500",
+    "rating": 4.1,
+    "in_stock": true
+  },
+  {
+    "objectID": "16",
+    "name": "Air Purifier HEPA",
+    "description": "HEPA air purifier for large rooms with quiet operation and air quality indicator.",
+    "price": 199.99,
+    "category": "Home & Kitchen",
+    "brand": "PureAir",
+    "image_url": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500",
+    "rating": 4.6,
+    "in_stock": true
+  },
+  {
+    "objectID": "17",
+    "name": "Dumbbell Set Adjustable",
+    "description": "Adjustable dumbbell set from 5 to 52.5 lbs per hand with storage tray.",
+    "price": 299.99,
+    "category": "Fitness",
+    "brand": "PowerLift",
+    "image_url": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+    "rating": 4.7,
+    "in_stock": false
+  },
+  {
+    "objectID": "18",
+    "name": "Electric Toothbrush",
+    "description": "Rechargeable electric toothbrush with multiple brushing modes and travel case.",
+    "price": 89.99,
+    "category": "Personal Care",
+    "brand": "SmileBright",
+    "image_url": "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=500",
+    "rating": 4.5,
+    "in_stock": true
+  },
+  {
+    "objectID": "19",
+    "name": "Wireless Keyboard & Mouse",
+    "description": "Wireless keyboard and mouse combo with long battery life and silent keys.",
+    "price": 54.99,
+    "category": "Electronics",
+    "brand": "TechGear",
+    "image_url": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500",
+    "rating": 4.3,
+    "in_stock": true
+  },
+  {
+    "objectID": "20",
+    "name": "Travel Pillow Memory Foam",
+    "description": "Ergonomic memory foam travel pillow with washable cover and carrying pouch.",
+    "price": 29.99,
+    "category": "Accessories",
+    "brand": "TravelComfort",
+    "image_url": "https://images.unsplash.com/photo-1584468292239-0a42051e553c?w=500",
+    "rating": 4.4,
+    "in_stock": true
+  }
+]

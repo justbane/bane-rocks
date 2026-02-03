@@ -1,0 +1,29 @@
+---
+description: Technology stack preferences for front-end, back-end, and architecture
+alwaysApply: true
+---
+
+# Technology Stack Preferences
+
+## Front-end
+- **Default Framework**: Vue.js (Vue 3 with Composition API)
+- Use TypeScript for type safety when applicable
+- Follow Vue.js official style guide and best practices
+- Prefer `<script setup>` syntax for Vue 3 components
+- Use Pinia for state management when needed
+- Utilize Vue Router for routing
+
+## Back-end
+- **Default Framework**: Python with Django
+- Follow PEP 8 style guidelines
+- Use Django REST Framework (DRF) for API development
+- Implement proper Django project structure (apps, models, views, serializers)
+- Use Django's built-in ORM for database operations
+- Follow Django security best practices
+
+## Architecture
+- Implement clear separation between front-end and back-end
+- Use RESTful API design principles for communication
+- Front-end communicates with back-end exclusively through API endpoints
+- Use proper HTTP methods (GET, POST, PUT, PATCH, DELETE)
+- Implement proper error handling on both sides

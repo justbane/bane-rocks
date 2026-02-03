@@ -1,0 +1,11 @@
+---
+description: Language-specific code style guidelines for Python and JavaScript/Vue
+alwaysApply: true
+---
+
+# Code Style
+
+- **Python**: Follow PEP 8, use type hints
+- **JavaScript/Vue**: Use ESLint and Prettier configurations
+- Maintain consistent indentation (4 spaces for Python, 2 spaces for JS/Vue)
+- Keep functions focused and modular

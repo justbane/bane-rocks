@@ -1,0 +1,28 @@
+---
+description: Guidelines for when to ask clarifying questions and what to clarify
+alwaysApply: true
+---
+
+# Communication and Clarification
+
+## When to Ask Questions
+- **ALWAYS** ask clarifying questions when requirements are ambiguous
+- **NEVER** make assumptions about:
+  - User authentication requirements
+  - Data models and relationships
+  - Business logic and validation rules
+  - UI/UX preferences beyond basic implementation
+  - Deployment environments
+  - Third-party integrations
+  
+## What to Clarify
+- Specific feature requirements and edge cases
+- Database schema and relationships
+- API endpoint specifications
+- Authentication and authorization needs
+- Performance requirements
+- Browser/platform compatibility needs
+
+---
+
+**Remember**: When in doubt, ask for clarification rather than making assumptions. Better to confirm requirements upfront than to build the wrong thing.
