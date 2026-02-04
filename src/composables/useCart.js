@@ -8,6 +8,9 @@ const isCartOpen = ref(false)
 // Local storage key
 const CART_STORAGE_KEY = 'algolia-shop-cart'
 
+// Flag to ensure initialization and watcher only run once
+let isInitialized = false
+
 // Initialize cart from localStorage
 const initializeCart = () => {
   try {
@@ -21,22 +24,32 @@ const initializeCart = () => {
   }
 }
 
-// Save cart to localStorage
+// Save cart to localStorage (debounced to prevent excessive writes)
+let saveTimeout = null
 const saveCart = () => {
-  try {
-    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems.value))
-  } catch (error) {
-    console.error('Error saving cart to localStorage:', error)
+  // Clear any pending save
+  if (saveTimeout) {
+    clearTimeout(saveTimeout)
   }
+  
+  // Debounce saves to prevent excessive localStorage writes
+  saveTimeout = setTimeout(() => {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems.value))
+    } catch (error) {
+      console.error('Error saving cart to localStorage:', error)
+    }
+  }, 100)
 }
 
-// Initialize on first use
-if (cartItems.value.length === 0) {
+// Initialize once and set up watcher only once
+if (!isInitialized) {
   initializeCart()
+  // Use shallow watch instead of deep watch for better performance
+  // We manually trigger saves when cart items are modified
+  watch(cartItems, saveCart, { deep: false })
+  isInitialized = true
 }
-
-// Watch for changes and save to localStorage
-watch(cartItems, saveCart, { deep: true })
 
 /**
  * Composable for cart functionality
@@ -52,9 +65,11 @@ export function useCart() {
 
     if (existingItem) {
       existingItem.quantity += 1
+      // Trigger reactivity by creating new array reference
+      cartItems.value = [...cartItems.value]
       success(`Updated quantity of ${product.name}`)
     } else {
-      cartItems.value.push({
+      cartItems.value = [...cartItems.value, {
         objectID: product.objectID,
         name: product.name,
         price: product.price,
@@ -63,7 +78,7 @@ export function useCart() {
         category: product.category,
         in_stock: product.in_stock,
         quantity: 1
-      })
+      }]
       success(`Added ${product.name} to cart`)
     }
   }
@@ -73,7 +88,7 @@ export function useCart() {
     const index = cartItems.value.findIndex(item => item.objectID === objectID)
     if (index > -1) {
       const itemName = cartItems.value[index].name
-      cartItems.value.splice(index, 1)
+      cartItems.value = cartItems.value.filter(item => item.objectID !== objectID)
       info(`Removed ${itemName} from cart`)
     }
   }
@@ -86,6 +101,8 @@ export function useCart() {
         removeItem(objectID)
       } else {
         item.quantity = quantity
+        // Trigger reactivity
+        cartItems.value = [...cartItems.value]
       }
     }
   }
@@ -95,6 +112,8 @@ export function useCart() {
     const item = cartItems.value.find(item => item.objectID === objectID)
     if (item) {
       item.quantity += 1
+      // Trigger reactivity
+      cartItems.value = [...cartItems.value]
     }
   }
 
@@ -104,6 +123,8 @@ export function useCart() {
     if (item) {
       if (item.quantity > 1) {
         item.quantity -= 1
+        // Trigger reactivity
+        cartItems.value = [...cartItems.value]
       } else {
         removeItem(objectID)
       }

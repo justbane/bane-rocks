@@ -8,6 +8,8 @@
         :src="product.image_url"
         :alt="product.name"
         @error="handleImageError"
+        loading="lazy"
+        decoding="async"
         class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
       />
       <span 
