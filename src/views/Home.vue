@@ -30,6 +30,7 @@
         v-else
         :search-client="searchClient"
         :index-name="indexName"
+        :future="{ preserveSharedStateOnUnmount: true }"
       >
         <ais-configure
           :hitsPerPage="12"

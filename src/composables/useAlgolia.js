@@ -62,15 +62,22 @@ export function useAlgolia() {
       }
 
       const indexName = getIndexName()
-      const index = client.initIndex(indexName)
 
-      const results = await index.search(query, {
-        hitsPerPage: params.hitsPerPage || 20,
-        page: params.page || 0,
-        ...params
+      // Algolia v5 API: use search with requests array
+      const response = await client.search({
+        requests: [
+          {
+            indexName: indexName,
+            query: query,
+            hitsPerPage: params.hitsPerPage || 20,
+            page: params.page || 0,
+            ...params
+          }
+        ]
       })
 
-      return results
+      // Return the first result from the results array
+      return response.results[0]
     } catch (e) {
       console.error('Search error:', e)
       throw e
@@ -86,10 +93,25 @@ export function useAlgolia() {
       }
 
       const indexName = getIndexName()
-      const index = client.initIndex(indexName)
 
-      const object = await index.getObject(objectID)
-      return object
+      // Algolia v5 API: use search with filters to get a specific object
+      const response = await client.search({
+        requests: [
+          {
+            indexName: indexName,
+            query: '',
+            filters: `objectID:${objectID}`,
+            hitsPerPage: 1
+          }
+        ]
+      })
+
+      // Return the first hit from the first result
+      if (response.results && response.results[0] && response.results[0].hits.length > 0) {
+        return response.results[0].hits[0]
+      } else {
+        throw new Error('Product not found')
+      }
     } catch (e) {
       console.error('Get object error:', e)
       throw e
