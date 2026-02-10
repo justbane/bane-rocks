@@ -144,7 +144,7 @@ describe('ProductCard', () => {
     
     await img.trigger('error')
     
-    expect(img.attributes('src')).toBe('https://via.placeholder.com/500x500?text=No+Image')
+    expect(img.attributes('src')).toBe("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Crect width='500' height='500' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='24' fill='%239ca3af' text-anchor='middle' dominant-baseline='middle'%3ENo Image%3C/text%3E%3C/svg%3E")
   })
 
   it('should not show rating when rating is not available', () => {
