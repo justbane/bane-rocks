@@ -198,3 +198,14 @@ export function useCart() {
     isEmpty
   }
 }
+
+/**
+ * Cleanup function to clear pending timeouts
+ * Call this on app unmount to prevent memory leaks
+ */
+export function cleanupCart() {
+  if (saveTimeout) {
+    clearTimeout(saveTimeout)
+    saveTimeout = null
+  }
+}

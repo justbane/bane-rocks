@@ -1,6 +1,13 @@
 <script setup>
+import { onBeforeUnmount } from 'vue'
 import CartIcon from './components/CartIcon.vue'
 import Toast from './components/Toast.vue'
+import { cleanupCart } from './composables/useCart'
+
+// Clean up cart timeout on app unmount to prevent memory leaks
+onBeforeUnmount(() => {
+  cleanupCart()
+})
 </script>
 
 <template>

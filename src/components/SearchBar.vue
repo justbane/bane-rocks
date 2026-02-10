@@ -5,7 +5,7 @@
         <div class="relative">
           <input
             :value="currentRefinement"
-            @input="refine($event.target.value)"
+            @input="handleSearchInput($event, refine)"
             type="search"
             placeholder="Search products..."
             class="w-full px-4 py-3 sm:py-4 pr-12 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
@@ -30,7 +30,34 @@
 </template>
 
 <script setup>
+import { ref, onBeforeUnmount } from 'vue'
 import { AisSearchBox, AisStats } from 'vue-instantsearch/vue3/es'
+
+// Debounce timeout for search input (300ms delay for mobile optimization)
+const DEBOUNCE_DELAY = 300
+const searchTimeout = ref(null)
+
+// Debounced search handler to reduce API request frequency
+const handleSearchInput = (event, refine) => {
+  const value = event.target.value
+  
+  // Clear existing timeout to prevent queued requests
+  if (searchTimeout.value) {
+    clearTimeout(searchTimeout.value)
+  }
+  
+  // Set new timeout to delay the API call
+  searchTimeout.value = setTimeout(() => {
+    refine(value)
+  }, DEBOUNCE_DELAY)
+}
+
+// Cleanup timeout on component unmount to prevent memory leaks
+onBeforeUnmount(() => {
+  if (searchTimeout.value) {
+    clearTimeout(searchTimeout.value)
+  }
+})
 </script>
 
 <style scoped>
