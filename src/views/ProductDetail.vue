@@ -48,8 +48,6 @@
 
           <div class="product-price-section">
             <span class="product-price">${{ product.price.toFixed(2) }}</span>
-            <span v-if="product.in_stock" class="in-stock-badge">In Stock</span>
-            <span v-else class="out-of-stock-badge">Out of Stock</span>
           </div>
 
           <p class="product-description">{{ product.description }}</p>
@@ -69,10 +67,9 @@
 
             <button
               @click="handleAddToCart"
-              :disabled="!product.in_stock"
               class="add-to-cart-btn-large"
             >
-              {{ product.in_stock ? 'Add to Cart' : 'Unavailable' }}
+              Add to Cart
             </button>
           </div>
 
@@ -91,10 +88,6 @@
                 <tr>
                   <td class="detail-label">Product ID</td>
                   <td class="detail-value">{{ product.objectID }}</td>
-                </tr>
-                <tr>
-                  <td class="detail-label">Availability</td>
-                  <td class="detail-value">{{ product.in_stock ? 'In Stock' : 'Out of Stock' }}</td>
                 </tr>
               </tbody>
             </table>
@@ -138,10 +131,8 @@ const loadProduct = async () => {
 }
 
 const handleAddToCart = () => {
-  if (product.value && product.value.in_stock) {
-    for (let i = 0; i < quantity.value; i++) {
-      addItem(product.value)
-    }
+  for (let i = 0; i < quantity.value; i++) {
+    addItem(product.value)
   }
 }
 
