@@ -61,7 +61,7 @@
             class="cart-item"
           >
             <img
-              :src="item.image_url"
+              :src="item.image"
               :alt="item.name"
               class="item-image"
               @error="handleImageError"
@@ -207,7 +207,7 @@ const handleImageError = (event) => {
 
 .cart-title {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #1e293b;
   margin: 0;
 }
@@ -256,7 +256,7 @@ const handleImageError = (event) => {
 
 .empty-title {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #1e293b;
   margin: 0 0 0.5rem 0;
 }
@@ -313,7 +313,7 @@ const handleImageError = (event) => {
 
 .item-name {
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #1e293b;
   margin: 0;
   line-height: 1.3;
@@ -327,7 +327,7 @@ const handleImageError = (event) => {
 
 .item-price {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #3b82f6;
   margin: 0.25rem 0;
 }
@@ -428,7 +428,7 @@ const handleImageError = (event) => {
 .total-row .summary-label,
 .total-row .summary-value {
   font-size: 1.125rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #1e293b;
 }
 
@@ -440,7 +440,7 @@ const handleImageError = (event) => {
   border: none;
   border-radius: 0.375rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
 }

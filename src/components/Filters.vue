@@ -8,7 +8,7 @@
         <button
           :disabled="!canRefine"
           @click="refine"
-          class="w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-lg text-gray-700 text-sm font-medium hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors mb-6"
+          class="w-full px-2 py-1 bg-gray-100 border border-gray-300 rounded-lg text-gray-700 text-sm font-medium hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors mb-6"
         >
           Clear all filters
         </button>
@@ -77,7 +77,7 @@
                 :min="range.min"
                 :max="range.max"
                 :placeholder="range.min?.toString()"
-                class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                class="flex-1 px-1 py-1 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
               />
               <span class="text-sm text-gray-500">to</span>
               <input
@@ -86,7 +86,7 @@
                 :min="range.min"
                 :max="range.max"
                 :placeholder="range.max?.toString()"
-                class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                class="flex-1 px-1 py-1 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
               />
             </div>
             <button 
@@ -98,24 +98,6 @@
           </form>
         </template>
       </ais-range-input>
-    </div>
-
-    <!-- In Stock Filter -->
-    <div>
-      <h4 class="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-3 m-0">Availability</h4>
-      <ais-toggle-refinement attribute="in_stock" :on="true" label="In Stock Only">
-        <template v-slot="{ value, refine }">
-          <label class="flex items-center gap-2 cursor-pointer group">
-            <input
-              type="checkbox"
-              :checked="value.isRefined"
-              @change="refine(value)"
-              class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer"
-            />
-            <span class="text-sm text-gray-700 group-hover:text-gray-900">In Stock Only</span>
-          </label>
-        </template>
-      </ais-toggle-refinement>
     </div>
   </div>
 </template>

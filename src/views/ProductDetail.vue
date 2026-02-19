@@ -22,7 +22,7 @@
       <div class="product-content">
         <div class="product-image-section">
           <img
-            :src="product.image_url"
+            :src="product.image"
             :alt="product.name"
             class="product-detail-image"
             @error="handleImageError"
@@ -218,7 +218,7 @@ onMounted(() => {
   align-items: center;
   color: #3b82f6;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 300;
   margin-bottom: 1.5rem;
   background: none;
   border: none;
@@ -266,7 +266,7 @@ onMounted(() => {
 
 .product-brand {
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 300;
   color: #3b82f6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -282,7 +282,7 @@ onMounted(() => {
 
 .product-title {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 300;
   color: #1e293b;
   margin: 0;
   line-height: 1.3;
@@ -321,7 +321,7 @@ onMounted(() => {
 
 .product-price {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 300;
   color: #1e293b;
 }
 
@@ -331,7 +331,7 @@ onMounted(() => {
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .out-of-stock-badge {
@@ -340,7 +340,7 @@ onMounted(() => {
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .product-description {
@@ -385,7 +385,7 @@ onMounted(() => {
   border: none;
   text-align: center;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 300;
   outline: none;
 }
 
@@ -397,7 +397,7 @@ onMounted(() => {
   border: none;
   border-radius: 0.375rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 300;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -419,7 +419,7 @@ onMounted(() => {
 
 .product-details-table h3 {
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 300;
   color: #1e293b;
   margin: 0 0 1rem 0;
 }
@@ -439,7 +439,7 @@ onMounted(() => {
 
 .detail-label {
   padding: 0.75rem 0;
-  font-weight: 500;
+  font-weight: 300;
   color: #64748b;
   width: 40%;
 }

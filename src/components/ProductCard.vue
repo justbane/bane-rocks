@@ -5,19 +5,13 @@
   >
     <div class="relative w-full pt-[100%] bg-gray-100 overflow-hidden">
       <img
-        :src="product.image_url"
+        :src="product.image"
         :alt="product.name"
         @error="handleImageError"
         loading="lazy"
         decoding="async"
         class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
       />
-      <span 
-        v-if="!product.in_stock" 
-        class="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded text-xs font-semibold uppercase"
-      >
-        Out of Stock
-      </span>
     </div>
 
     <div class="p-4 flex flex-col flex-1">
@@ -49,13 +43,12 @@
       </div>
 
       <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-100">
-        <span class="text-2xl font-bold text-gray-900">${{ product.price.toFixed(2) }}</span>
+        <span class="font-bold text-gray-900">${{ product.price.toFixed(2) }}</span>
         <button
           @click.stop="addToCart"
-          :disabled="!product.in_stock"
-          class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium transition-all hover:bg-blue-700 hover:-translate-y-0.5 disabled:bg-gray-300 disabled:cursor-not-allowed disabled:transform-none"
+          class="px-2 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium transition-all hover:bg-blue-700 hover:-translate-y-0.5 disabled:bg-gray-300 disabled:cursor-not-allowed disabled:transform-none"
         >
-          {{ product.in_stock ? 'Add to Cart' : 'Unavailable' }}
+          Add to Cart
         </button>
       </div>
     </div>
@@ -81,9 +74,7 @@ const navigateToProduct = () => {
 }
 
 const addToCart = () => {
-  if (props.product.in_stock) {
-    addItem(props.product)
-  }
+  addItem(props.product)
 }
 
 const truncateDescription = (description) => {

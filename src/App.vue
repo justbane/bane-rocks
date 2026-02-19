@@ -21,8 +21,9 @@ onBeforeUnmount(() => {
         <div class="flex justify-between items-center">
           <router-link to="/" class="no-underline">
             <h1 class="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent m-0">
-              Bane Rocks
+              Bane.Rocks
             </h1>
+            <h3 class="text-sm text-gray-500">E-commerce Learning App</h3>
           </router-link>
           
           <nav class="flex items-center gap-4">
@@ -48,9 +49,10 @@ onBeforeUnmount(() => {
 <style>
 /* Global styles */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 300
 }
 
 /* Router link active styles */

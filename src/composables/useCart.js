@@ -73,7 +73,7 @@ export function useCart() {
         objectID: product.objectID,
         name: product.name,
         price: product.price,
-        image_url: product.image_url,
+        image_url: product.image,
         brand: product.brand,
         category: product.category,
         in_stock: product.in_stock,
