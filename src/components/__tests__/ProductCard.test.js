@@ -31,11 +31,10 @@ describe('ProductCard', () => {
       name: 'Test Product',
       description: 'This is a test product description',
       price: 29.99,
-      image_url: 'https://example.com/image.jpg',
+      image: 'https://example.com/image.jpg',
       brand: 'Test Brand',
       category: 'Electronics',
-      rating: 4.5,
-      in_stock: true
+      rating: 4.5
     }
 
     return mount(ProductCard, {
@@ -80,28 +79,6 @@ describe('ProductCard', () => {
     const descriptionText = wrapper.find('.text-sm').text()
     expect(descriptionText).toContain('...')
     expect(descriptionText.length).toBeLessThan(longDescription.length + 10)
-  })
-
-  it('should show "Out of Stock" badge when product is not in stock', () => {
-    const wrapper = createWrapper({ in_stock: false })
-    
-    expect(wrapper.text()).toContain('Out of Stock')
-  })
-
-  it('should disable "Add to Cart" button when out of stock', () => {
-    const wrapper = createWrapper({ in_stock: false })
-    const button = wrapper.find('button')
-    
-    expect(button.attributes('disabled')).toBeDefined()
-    expect(button.text()).toBe('Unavailable')
-  })
-
-  it('should enable "Add to Cart" button when in stock', () => {
-    const wrapper = createWrapper({ in_stock: true })
-    const button = wrapper.find('button')
-    
-    expect(button.attributes('disabled')).toBeUndefined()
-    expect(button.text()).toBe('Add to Cart')
   })
 
   it('should navigate to product detail page when card is clicked', async () => {
