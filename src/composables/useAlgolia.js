@@ -75,11 +75,6 @@ export function useAlgolia() {
           }
         ]
       })
-
-      
-      if (response.results[0].hits.length === 0) {
-        throw new Error('No results found')
-      }
       
       // Return the first result from the results array if there are results
       return response.results[0]
