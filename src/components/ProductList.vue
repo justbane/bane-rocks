@@ -47,19 +47,6 @@
               title="No products found"
               message="Try adjusting your search or filters to find what you're looking for"
             >
-              <template #action>
-                <ais-clear-refinements>
-                  <template v-slot="{ canRefine, refine }">
-                    <button
-                      v-if="canRefine"
-                      @click="refine"
-                      class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-                    >
-                      Clear all filters
-                    </button>
-                  </template>
-                </ais-clear-refinements>
-              </template>
             </EmptyState>
 
             <!-- Products Grid -->
@@ -82,7 +69,7 @@
     <div class="flex justify-center mt-8">
       <ais-pagination :padding="2">
         <template v-slot="{ pages, currentRefinement, refine, isFirstPage, isLastPage }">
-          <nav class="flex items-center gap-2" v-if="pages.length > 1">
+          <nav class="flex items-center gap-2" v-if="pages.length > 0">
             <!-- Previous Button -->
             <button
               @click="refine(currentRefinement - 1)"
