@@ -30,6 +30,7 @@
         v-else
         :search-client="searchClient"
         :index-name="indexName"
+        :insights="true"
       >
         <ais-configure
           :hitsPerPage="12"
