@@ -32,7 +32,7 @@
 
     <!-- Loading and Products Grid -->
     <ais-hits>
-      <template v-slot:default="{ items }">
+      <template v-slot:default="{ items, sendEvent }">
         <!-- Loading State -->
         <ais-state-results>
           <template v-slot="{ status }">
@@ -58,6 +58,7 @@
                 v-for="item in items"
                 :key="item.objectID"
                 :product="item"
+                :send-event="sendEvent"
               />
             </div>
           </template>

@@ -63,6 +63,10 @@ const props = defineProps({
   product: {
     type: Object,
     required: true
+  },
+  sendEvent: {
+    type: Function,
+    default: undefined
   }
 })
 
@@ -70,10 +74,19 @@ const router = useRouter()
 const { addItem } = useCart()
 
 const navigateToProduct = () => {
-  router.push(`/product/${props.product.objectID}`)
+  if (props.sendEvent) {
+    props.sendEvent('click', props.product, 'Product Clicked')
+  }
+  router.push({
+    path: `/product/${props.product.objectID}`,
+    query: props.product.__queryID ? { queryID: props.product.__queryID } : {}
+  })
 }
 
 const addToCart = () => {
+  if (props.sendEvent) {
+    props.sendEvent('conversion', props.product, 'Added to Cart')
+  }
   addItem(props.product)
 }
 

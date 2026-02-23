@@ -106,7 +106,7 @@ import { useCart } from '../composables/useCart'
 
 const route = useRoute()
 const router = useRouter()
-const { getObject } = useAlgolia()
+const { getObject, indexName } = useAlgolia()
 const { addItem } = useCart()
 
 const product = ref(null)
@@ -122,6 +122,13 @@ const loadProduct = async () => {
     const productId = route.params.id
     const data = await getObject(productId)
     product.value = data
+    if (typeof window !== 'undefined' && window.aa) {
+      window.aa('viewedObjectIDs', {
+        index: indexName,
+        eventName: 'Product Viewed',
+        objectIDs: [data.objectID]
+      })
+    }
   } catch (err) {
     console.error('Error loading product:', err)
     error.value = 'Unable to load product details. Please try again.'
@@ -131,6 +138,23 @@ const loadProduct = async () => {
 }
 
 const handleAddToCart = () => {
+  const queryID = route.query.queryID
+  if (typeof window !== 'undefined' && window.aa) {
+    if (queryID) {
+      window.aa('convertedObjectIDsAfterSearch', {
+        index: indexName,
+        queryID,
+        objectIDs: [product.value.objectID],
+        eventName: 'Added to Cart'
+      })
+    } else {
+      window.aa('convertedObjectIDs', {
+        index: indexName,
+        objectIDs: [product.value.objectID],
+        eventName: 'Added to Cart'
+      })
+    }
+  }
   for (let i = 0; i < quantity.value; i++) {
     addItem(product.value)
   }

@@ -86,7 +86,18 @@ describe('ProductCard', () => {
     
     await wrapper.trigger('click')
     
-    expect(mockRouter.push).toHaveBeenCalledWith('/product/1')
+    expect(mockRouter.push).toHaveBeenCalledWith({ path: '/product/1', query: {} })
+  })
+
+  it('should pass queryID in route when product has __queryID', async () => {
+    const wrapper = createWrapper({ __queryID: 'search-query-123' })
+    
+    await wrapper.trigger('click')
+    
+    expect(mockRouter.push).toHaveBeenCalledWith({
+      path: '/product/1',
+      query: { queryID: 'search-query-123' }
+    })
   })
 
   it('should call addItem when add to cart button is clicked', async () => {
