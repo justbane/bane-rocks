@@ -80,10 +80,10 @@ const showDropdown = ref(true)
 
 const router = useRouter()
 
-// Get hits from the main (first) index
+// Get hits from the main (first) index, limited to 6 for dropdown
 const getMainIndexHits = (indices) => {
   if (!indices?.length) return []
-  return indices[0]?.hits ?? []
+  return (indices[0]?.hits ?? []).slice(0, 6)
 }
 
 // Debounced search handler to reduce API request frequency
