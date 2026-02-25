@@ -31,6 +31,7 @@
         :search-client="searchClient"
         :index-name="indexName"
         :insights="true"
+        :routing="true"
       >
         <ais-configure
           :hitsPerPage="12"
