@@ -35,12 +35,16 @@
         <ais-configure
           :hitsPerPage="12"
           :attributesToSnippet="['description:50']"
+          :attributesToHighlight="['name']"
         />
 
-        <!-- Search Bar -->
-        <div class="mb-6 sm:mb-8">
-          <SearchBar />
-        </div>
+        <!-- Search Bar with autocomplete dropdown (scoped to 6 suggestions) -->
+        <ais-index :index-name="indexName">
+          <ais-configure :hitsPerPage="6" />
+          <div class="mb-6 sm:mb-8">
+            <SearchBar />
+          </div>
+        </ais-index>
 
         <!-- Filters and Products Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-8 items-start">
@@ -103,7 +107,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { AisInstantSearch, AisConfigure } from 'vue-instantsearch/vue3/es'
+import { AisInstantSearch, AisConfigure, AisIndex } from 'vue-instantsearch/vue3/es'
 import SearchBar from '../components/SearchBar.vue'
 import ProductList from '../components/ProductList.vue'
 import Filters from '../components/Filters.vue'
