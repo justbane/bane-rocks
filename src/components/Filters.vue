@@ -18,7 +18,7 @@
     <!-- Category Filter -->
     <div class="mb-6 pb-6 border-b border-gray-200">
       <h4 class="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-3 m-0">Category</h4>
-      <ais-refinement-list attribute="category" :sort-by="['name:asc']">
+      <ais-refinement-list attribute="categories" :sort-by="['name:asc']">
         <template v-slot="{ items, refine }">
           <ul class="space-y-2">
             <li v-for="item in items" :key="item.value">
