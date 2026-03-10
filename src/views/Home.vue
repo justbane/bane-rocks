@@ -105,11 +105,24 @@
 
 <script setup>
 import { ref } from 'vue'
+import { onBeforeRouteLeave } from 'vue-router'
 import { AisInstantSearch, AisConfigure } from 'vue-instantsearch/vue3/es'
 import SearchBar from '../components/SearchBar.vue'
 import ProductList from '../components/ProductList.vue'
 import Filters from '../components/Filters.vue'
 import { useAlgolia } from '../composables/useAlgolia'
+
+const SEARCH_STATE_KEY = 'algolia_search_state'
+
+// Restore search state before ais-instant-search mounts so it reads the correct URL.
+// This runs synchronously in setup() before any child component is created.
+if (typeof window !== 'undefined') {
+  const saved = sessionStorage.getItem(SEARCH_STATE_KEY)
+  if (saved && !window.location.search) {
+    window.history.replaceState(window.history.state, '', saved)
+  }
+  sessionStorage.removeItem(SEARCH_STATE_KEY)
+}
 
 const { searchClient, indexName, error } = useAlgolia()
 const showMobileFilters = ref(false)
@@ -117,6 +130,13 @@ const showMobileFilters = ref(false)
 const toggleMobileFilters = () => {
   showMobileFilters.value = !showMobileFilters.value
 }
+
+// Save the current search URL before navigating away so it can be restored on return.
+onBeforeRouteLeave(() => {
+  if (typeof window !== 'undefined' && window.location.search) {
+    sessionStorage.setItem(SEARCH_STATE_KEY, window.location.search)
+  }
+})
 </script>
 
 <style scoped>
