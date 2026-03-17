@@ -122,13 +122,14 @@ const loadProduct = async () => {
     const productId = route.params.id
     const data = await getObject(productId)
     product.value = data
-    if (typeof window !== 'undefined' && window.aa) {
-      window.aa('viewedObjectIDs', {
-        index: indexName,
-        eventName: 'Product Viewed',
-        objectIDs: [data.objectID]
-      })
-    }
+    // DISABLED FOR NOW
+    // if (typeof window !== 'undefined' && window.aa) {
+    //   window.aa('viewedObjectIDs', {
+    //     index: indexName,
+    //     eventName: 'Product Viewed',
+    //     objectIDs: [data.objectID]
+    //   })
+    // }
   } catch (err) {
     console.error('Error loading product:', err)
     error.value = 'Unable to load product details. Please try again.'
