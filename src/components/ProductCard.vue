@@ -74,13 +74,14 @@ const router = useRouter()
 const { addItem } = useCart()
 
 const navigateToProduct = () => {
-  if (props.sendEvent) {
-    props.sendEvent('click', props.product, 'Product Clicked')
-  }
-  router.push({
-    path: `/product/${props.product.objectID}`,
-    query: props.product.__queryID ? { queryID: props.product.__queryID } : {}
-  })
+  // DISABLED FOR NOW
+  // if (props.sendEvent) {
+  //   props.sendEvent('click', props.product, 'Product Clicked')
+  // }
+  // router.push({
+  //   path: `/product/${props.product.objectID}`,
+  //   query: props.product.__queryID ? { queryID: props.product.__queryID } : {}
+  // })
 }
 
 const addToCart = () => {
