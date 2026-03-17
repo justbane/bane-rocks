@@ -78,10 +78,10 @@ const navigateToProduct = () => {
   // if (props.sendEvent) {
   //   props.sendEvent('click', props.product, 'Product Clicked')
   // }
-  // router.push({
-  //   path: `/product/${props.product.objectID}`,
-  //   query: props.product.__queryID ? { queryID: props.product.__queryID } : {}
-  // })
+  router.push({
+    path: `/product/${props.product.objectID}`,
+    query: props.product.__queryID ? { queryID: props.product.__queryID } : {}
+  })
 }
 
 const addToCart = () => {
